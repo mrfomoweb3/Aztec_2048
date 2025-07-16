@@ -1,70 +1,95 @@
-# Getting Started with Create React App
+# 🧠 Aztec-2048
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A minimalist, Aztec-themed 2048 game built from scratch in React.  
+Responsive. Fast. Touch-friendly. With a global leaderboard and dark mode styling.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 🚀 Features
 
-### `npm start`
+- 🎮 **Playable 2048 grid** with tile merging  
+- 🧍 **Name input** to personalize and track scores  
+- 💾 **Local game history** saved per player  
+- 🏆 **Global leaderboard** stored in `localStorage`  
+- 📱 **Touchscreen & keyboard support**  
+- ☠️ **Game Over detection** with restart button  
+- 🎨 **Aztec-style UI** with responsive layout and animations  
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🧩 Components Breakdown
 
-### `npm test`
+### 1. `NameInput.jsx`
+- Renders a form to input your name
+- Shows the game logo and welcome message
+- Once submitted, loads the game
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 2. `Game2048.jsx`
+- Main 2048 gameplay grid (`4x4`)
+- Handles all movement logic: up, down, left, right
+- Detects merge events and tracks score
+- Stores each round in personal history
+- On game over:
+  - Saves score to personal and global leaderboard
+  - Sorts players by top score
+  - Opens "Play Again" prompt
 
-### `npm run build`
+### 3. Leaderboard Modal
+- Triggered by clicking the 🏆 button in navbar
+- Shows top 100 scores from all players (locally stored)
+- Automatically updates if a user beats their previous high score
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 🗂 File Structure
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```
+src/
+├── components/
+│   ├── NameInput.jsx
+│   └── Game2048.jsx
+├── styles/
+│   └── Game2048.css
+├── App.js
+└── index.js
+```
 
-### `npm run eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## 🛠 Local Setup
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```bash
+# 1. Clone the repo
+git clone https://github.com/yourname/aztec-2048.git
+cd aztec-2048
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+# 2. Install dependencies
+npm install
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+# 3. Start the dev server
+npm start
+```
 
-## Learn More
+Then open `http://localhost:3000`
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+---
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 📦 Tech Stack
 
-### Code Splitting
+- React (via Create React App)
+- CSS Modules for styling
+- `localStorage` for persistent score/history
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+---
 
-### Analyzing the Bundle Size
+## 📝 To-Do Next
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- [ ] Add animations to tile merges
+- [ ] Add sound effects
+- [ ] Online/global database for leaderboard (optional)
+- [ ] Deploy to Vercel or Netlify
 
-### Making a Progressive Web App
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Made with cocoa and keyboard mashing ✨  
+**Built for fun. Inspired by Aztec magic.**
