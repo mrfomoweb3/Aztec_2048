@@ -1,0 +1,320 @@
+.game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .game-container h2 {
+    margin-bottom: 1rem;
+    color: #dfb300;
+  }
+  
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(4, 80px);
+    grid-template-rows: repeat(4, 80px);
+    gap: 10px;
+    background-color: #1a1a1a;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(123, 79, 222, 0.2);
+  }
+  
+  .tile {
+    width: 80px;
+    height: 80px;
+    background-color: #2a2a2a;
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+  }
+  
+  @media (max-width: 480px) {
+    .grid {
+      grid-template-columns: repeat(4, 60px);
+      grid-template-rows: repeat(4, 60px);
+      gap: 8px;
+      padding: 8px;
+    }
+  
+    .tile {
+      width: 60px;
+      height: 60px;
+      font-size: 1.2rem;
+    }
+  }
+    .tile {
+        width: 80px;
+        height: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        font-weight: bold;
+        border-radius: 6px;
+        transition: all 0.2s ease;
+        animation: pop 0.2s ease;
+      }
+      
+      /* 🎨 Colors by value */
+      .tile {
+        background-color: #2a2a2a;
+        color: #ffffff;
+      }
+      
+      .tile-2    { background-color: #3e3e3e; }
+      .tile-4    { background-color: #5e4c2b; }
+      .tile-8    { background-color: #7b4fde; color: #fff; }
+      .tile-16   { background-color: #9b59b6; color: #fff; }
+      .tile-32   { background-color: #dfb300; color: #000; }
+      .tile-64   { background-color: #e67e22; color: #000; }
+      .tile-128  { background-color: #f39c12; color: #000; }
+      .tile-256  { background-color: #d35400; color: #fff; }
+      .tile-512  { background-color: #8e44ad; color: #fff; }
+      .tile-1024 { background-color: #c0392b; color: #fff; }
+      .tile-2048 { background-color: #2ecc71; color: #000; }
+      
+      @keyframes pop {
+        from {
+          transform: scale(0.9);
+          opacity: 0.6;
+        }
+        to {
+          transform: scale(1);
+          opacity: 1;
+        }
+      }
+      
+  .game-over {
+    margin-top: 1rem;
+    font-size: 1.25rem;
+    color: #dfb300;
+    font-weight: bold;
+    background-color: #2a2a2a;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 0 12px rgba(255, 255, 255, 0.05);
+  }
+  .restart-btn {
+    margin-top: 1rem;
+    padding: 0.6rem 1.2rem;
+    font-size: 1rem;
+    background-color: #7b4fde;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: transform 0.2s ease, background 0.2s ease;
+  }
+  
+  .restart-btn:hover {
+    background-color: #6a3fd2;
+    transform: scale(1.05);
+  }
+  
+  .restart-btn:active {
+    transform: scale(0.95);
+  }
+  .merged {
+    animation: mergePop 0.2s ease-in-out;
+  }
+  
+  @keyframes mergePop {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.25);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  .score {
+    margin-bottom: 1rem;
+    color: #ffffff;
+    font-size: 1.1rem;
+    font-weight: 600;
+  }
+  .history {
+    margin-top: 2rem;
+    background-color: #1a1a1a;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+    text-align: left;
+  }
+  
+  .history h3 {
+    color: #dfb300;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .history ul {
+    list-style: none;
+    padding-left: 0;
+    font-size: 0.9rem;
+    color: #ccc;
+  }
+  
+  .history li {
+    margin-bottom: 0.3rem;
+  }
+  
+  .history span {
+    color: #888;
+  }
+  .game-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+  
+  .history-panel {
+    background-color: #1a1a1a;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+    min-width: 200px;
+    max-width: 300px;
+  }
+  
+  .history-panel h3 {
+    color: #dfb300;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    text-align: center;
+  }
+  
+  .history-panel ul {
+    list-style: none;
+    padding-left: 0;
+    font-size: 0.9rem;
+    color: #ccc;
+  }
+  
+  .history-panel li {
+    margin-bottom: 0.4rem;
+  }
+  
+  .history-panel span {
+    color: #888;
+  }
+  .game-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+  
+  .history-panel {
+    background-color: #1a1a1a;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+    min-width: 200px;
+    max-width: 300px;
+  }
+  
+  .history-panel h3 {
+    color: #dfb300;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    text-align: center;
+  }
+  
+  .history-panel ul {
+    list-style: none;
+    padding-left: 0;
+    font-size: 0.9rem;
+    color: #ccc;
+  }
+  
+  .history-panel li {
+    margin-bottom: 0.4rem;
+  }
+  
+  .history-panel span {
+    color: #888;
+  }
+  .navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #111;
+  border-bottom: 1px solid #222;
+  color: #dfb300;
+}
+
+.leaderboard-btn {
+  background: #dfb300;
+  color: #000;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background 0.3s ease;
+}
+
+.leaderboard-btn:hover {
+  background: #ffcc00;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.leaderboard-modal {
+  background: #1a1a1a;
+  padding: 2rem;
+  border-radius: 12px;
+  max-width: 400px;
+  width: 90%;
+  color: #fff;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+  text-align: center;
+}
+
+.leaderboard-list {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+  text-align: left;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.leaderboard-list li {
+  margin: 0.4rem 0;
+}
+
+.close-btn {
+  background: #444;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  margin-top: 1rem;
+  cursor: pointer;
+  border-radius: 4px;
+}
